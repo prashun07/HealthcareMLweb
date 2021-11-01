@@ -1,4 +1,3 @@
-# import jsonify
 import requests
 import pickle
 import numpy as np
@@ -31,21 +30,6 @@ def pneumonia_predict(img_path):
     preds = model_pneumonia.predict(x)
     return preds
 
-# @app.route('/malariadisease', methods=['GET', 'POST'])
-# def malariadisease():
-#     if request.method=="GET":
-#         return render_template('malariadisease.html', title='Malaria Disease')
-#     else:
-#         f=request.files["file"]
-#         basepath = os.path.dirname(__file__)
-#         file_path = os.path.join(basepath,'uploads',  secure_filename(f.filename))
-#         f.save(file_path)
-
-#         prediction = malaria_predict(file_path)
-#         if prediction[0][0]>=0.5:
-#             return render_template('malaria_prediction.html', prediction_text="Oops! The cell image indicates the presence of Malaria.", image_name = f.filename, title='Malaria Disease')
-#         else:
-#             return render_template('malaria_prediction.html', prediction_text="Great! You don't have Malaria.", image_name= f.filename, title='Malaria Disease')
 
 @app.route('/pneumoniadisease', methods=['GET', 'POST'])
 def pneumoniadisease():
